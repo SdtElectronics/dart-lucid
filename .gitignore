@@ -1,1 +1,7 @@
 /lib/.limbo
+.dart_tool/
+.packages
+.vscode
+build/
+pubspec.lock
+doc/api/

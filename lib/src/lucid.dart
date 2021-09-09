@@ -1,4 +1,3 @@
-import 'dart:collection';
 
 import 'layoutTree/LTelementNode.dart';
 import 'layoutTree/attributeEnums.dart';
@@ -15,7 +14,58 @@ class Lucid{
 		return rootNode;
 	}
 
+	void reflowAt(LTelementNode atNode){
+		LTelementNode? currentNode = atNode;
+		switch(atNode.stageToUpdate){
+		  	case 0: {
+				currentNode = currentNode.traceUpTill((node) {
+					return node!.stage0Update() && (node.position == Position.relative);
+				});
+				continue stage1;
+		  	}
+		
+		  	stage1:
+		  	case 1: {
+		  		final leaves = currentNode!.traverseDown((node) {
+				  	node!.stage1Update();
+			  	});
+			
+				LTelementNode.traverseUpTill(leaves,
+					(node) => node!.stage2Update(), 
+					(node) => node != currentNode);
+
+				// if the height of currentNode is changed after calculation,
+				// trace up until a node whose height is not affected
+				if(currentNode.stage2Update()){
+					currentNode = currentNode.traceUpTill((node) {
+						return node!.stage2Update() && (node.position == Position.relative);
+					});
+				}
+
+				continue stage3;
+		  	}
+
+		  	stage2:
+		  	case 2: {
+				currentNode = currentNode!.traceUpTill((node) {
+					return node!.stage2Update() && (node.position == Position.relative);
+				});
+
+				continue stage3;
+			  }
+
+		  	stage3:
+		  	case 3: {
+				final leaves = currentNode!.traverseDown((node) {
+				  	node!.stage3Update();
+			  	});
+		  	}
+
+		}
+	}
+
 	/// reflow children with same parent
+	/// should not be called on root
 	void reflowBatch(List<LTelementNode> nodes){
 		// group nodes by their stageToUpdate
 		final groupedNodes = List<List<LTelementNode>>.filled(4, []);
@@ -24,7 +74,7 @@ class Lucid{
 		}
 		
 		final updateGroup0 = groupedNodes[0];
-		LTelementNode stage1Root = updateGroup0.first;
+		LTelementNode stage1Root = updateGroup0.first.parent!;
 		if(updateGroup0.isNotEmpty){
 			// apply stage0 on each node in group0
 			for(final node in updateGroup0){
