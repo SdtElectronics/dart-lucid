@@ -21,6 +21,12 @@ class Lucid{
 				currentNode = currentNode.traceUpTill((node) {
 					return node!.stage0Update() && (node.position == Position.relative);
 				});
+
+				if(currentNode!.parent != null){
+					currentNode = currentNode.parent;
+					currentNode!.stage0Update();
+				}
+
 				continue stage1;
 		  	}
 		
@@ -42,6 +48,11 @@ class Lucid{
 					});
 				}
 
+				if(currentNode!.parent != null){
+					currentNode = currentNode.parent;
+					currentNode!.stage2Update();
+				}
+
 				continue stage3;
 		  	}
 
@@ -56,7 +67,8 @@ class Lucid{
 
 		  	stage3:
 		  	case 3: {
-				final leaves = currentNode!.traverseDown((node) {
+				currentNode!.parent?.stage3Update();
+				final leaves = currentNode.traverseDown((node) {
 				  	node!.stage3Update();
 			  	});
 		  	}

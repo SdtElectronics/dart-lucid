@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src = "lucid.js"></script>
-        <script src = "wrapper.js"></script>
+        <title>Lucid Playground</title>
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
         <header>
+            <h1><a href = "https://github.com/SdtElectronics/dart-lucid">Lucid</a></h1>
 
+            <div id = "rightLinks">
+                <a id = "thisLink" class = "rightLinks" href = "#">Playground</a>
+                <a class = "rightLinks" href = "https://github.com/SdtElectronics/dart-lucid">Github</a>
+            </div>
         </header>
 
         <main>
             <div id = "blueprint">
-                
+                <div id = "rootNode" class = "LTeNode">
+
+                </div>
             </div>
 
             <aside>
-                <div>
-                    <span>Node</span> <input type="number"/> 
-                    <span id = "addChild" class = "btn">Add Child</span>
-                    <span id = "remove" class = "btn">Remove</span>
+                <div class = "noCollapse">
+                    <label>Node <input id = "curNodeId" class = "panelEleBox numInput" type="number"/> </label>
+                    <span id = "addChild" class = "panelEleBox btn">Add Child</span>
+                    <span id = "remove" class = "panelEleBox btn">Remove</span>
                 </div>
 
                 <input type="checkbox" class = "toggleBar" checked/>
@@ -30,7 +36,32 @@
                 </div>
 
                 <div class = "optPanel">
+                    <label>Display: 
+                        <select id = "eDisplay" class = "panelEleBox">
+                            <option>block</option>
+                            <option>inline-block</option>
+                            <option>inline</option>
+                        </select>
+                    </label>
 
+                    <br/>
+
+                    <label>Overflow: 
+                        <select id = "eOverflow" class = "panelEleBox">
+                            <option>hidden</option>
+                            <option>visible</option>
+                        </select>
+                    </label>
+
+                    <br/>
+
+                    <label>fit-content:
+                        <input id = "bFit" type="checkbox" class = "swButton"/>
+                    </label>
+
+                    <label>wrap:
+                        <input id = "bWrap" type="checkbox" class = "swButton"/>
+                    </label>
                 </div>
 
                 <input type="checkbox" class = "toggleBar"/>
@@ -40,7 +71,119 @@
                 </div>
 
                 <div class = "optPanel">
-                    
+                    <div class = "horiHalf">
+                        <label>height&nbsp;&nbsp;
+                            <input id = "nHeight" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
+
+                    <div class = "horiHalf">
+                        <label>width&nbsp;&nbsp;
+                            <input id = "nWidth" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
+
+                    <div class = "horiHalf">
+                        <label>max-height&nbsp;
+                            <input id = "nMheight" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
+
+                    <div class = "horiHalf">
+                        <label>max-width&nbsp;
+                            <input id = "nMwidth" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
+
+                    <div class = "horiHalf">
+                        <label>min-height&nbsp;
+                            <input id = "nmHeight" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
+
+                    <div class = "horiHalf">
+                        <label>min-width&nbsp;
+                            <input id = "nmWidth" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
+
+                    <p>margin-</p>
+
+                    <div class = "horiQuarter">
+                        <label>&nbsp;top
+                            <input id = "nMtop" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
+
+                    <div class = "horiQuarter">
+                        <label>&nbsp;right
+                            <input id = "nMright" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
+
+                    <div class = "horiQuarter">
+                        <label>&nbsp;bottom
+                            <input id = "nMbottom" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
+
+                    <div class = "horiQuarter">
+                        <label>&nbsp;left
+                            <input id = "nMleft" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
+
+                    <p>border-</p>
+
+                    <div class = "horiQuarter">
+                        <label>&nbsp;top
+                            <input id = "nBtop" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
+
+                    <div class = "horiQuarter">
+                        <label>&nbsp;right
+                            <input id = "nBright" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
+
+                    <div class = "horiQuarter">
+                        <label>&nbsp;bottom
+                            <input id = "nBbottom" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
+
+                    <div class = "horiQuarter">
+                        <label>&nbsp;left
+                            <input id = "nBleft" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
+
+                    <p>padding-</p>
+
+                    <div class = "horiQuarter">
+                        <label>&nbsp;top
+                            <input id = "nPtop" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
+
+                    <div class = "horiQuarter">
+                        <label>&nbsp;right
+                            <input id = "nPright" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
+
+                    <div class = "horiQuarter">
+                        <label>&nbsp;bottom
+                            <input id = "nPbottom" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
+
+                    <div class = "horiQuarter">
+                        <label>&nbsp;left
+                            <input id = "nPleft" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
                 </div>
 
                 <input type="checkbox" class = "toggleBar"/>
@@ -50,7 +193,39 @@
                 </div>
 
                 <div class = "optPanel">
-                    
+                    <label>position: 
+                        <select id = "ePosition" class = "panelEleBox">
+                            <option>relative</option>
+                            <option>absolute</option>
+                            <option>fixed</option>
+                        </select>
+                    </label>
+
+                    <br/>
+
+                    <div class = "horiQuarter">
+                        <label>&nbsp;top
+                            <input id = "nOtop" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
+
+                    <div class = "horiQuarter">
+                        <label>&nbsp;right
+                            <input id = "nOright" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
+
+                    <div class = "horiQuarter">
+                        <label>&nbsp;bottom
+                            <input id = "nObottom" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
+
+                    <div class = "horiQuarter">
+                        <label>&nbsp;left
+                            <input id = "nOleft" class = "panelEleBox numInput" type="number"/>
+                        </label>
+                    </div>
                 </div>
 
                 <input type="checkbox" class = "toggleBar"/>
@@ -60,10 +235,39 @@
                 </div>
 
                 <div class = "optPanel">
-                    
+                    <label>align-tracks:
+                        <select id = "eAtracks" class = "panelEleBox">
+                            <option>start</option>
+                            <option>end</option>
+                            <option>center</option>
+                            <option>space-between</option>
+                        </select>
+                    </label>
+
+                    <label>align-items:
+                        <select id = "eAitems" class = "panelEleBox">
+                            <option>start</option>
+                            <option>end</option>
+                            <option>center</option>
+                            <option>space-between</option>
+                        </select>
+                    </label>
+
+                    <label>align-self:
+                        <select id = "eAself" class = "panelEleBox">
+                            <option>start</option>
+                            <option>end</option>
+                            <option>center</option>
+                        </select>
+                    </label>
                 </div>
             </aside>
         </main>
     </body>
+
+    <!--<script src = "lucid.js"></script>-->
+    <script src = "R:/out.js"></script>
+    <script src = "wrapper.js"></script>
+    <script src = "playground.js"></script>
 </html>
     

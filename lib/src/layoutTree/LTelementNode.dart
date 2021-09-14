@@ -28,11 +28,19 @@ class LTelementNode{
 		_position = ps;
 	}
 
+	int? get width{
+		return _width;
+	}
+
 	// All elements can be designated with a width or max-width
 	// While inline elements cannot be designated with a height
-	set width(int w){
+	set width(int? w){
 		stageToUpdate = 0;
 		_width = w;
+	}
+
+	int get minWidth{
+		return _minWidth;
 	}
 
 	set minWidth(int mw){
@@ -40,17 +48,29 @@ class LTelementNode{
 		_minWidth = mw;
 	}
 
+	int get maxWidth{
+		return _maxWidth;
+	}
+
 	set maxWidth(int mw){
 		stageToUpdate = 0;
 		_maxWidth = mw;
 	}
 
-	set height(int h){
+	int? get height{
+		return _height;
+	}
+
+	set height(int? h){
 		if(_display == Display.inline){
 
 		}
 		stageToUpdate = min(stageToUpdate, 2);
 		_height = h;
+	}
+
+	int get minHeight{
+		return _minHeight;
 	}
 
 	set minHeight(int mh){
@@ -61,12 +81,20 @@ class LTelementNode{
 		_minHeight = mh;
 	}
 
+	int get maxHeight{
+		return _maxHeight;
+	}
+
 	set maxHeight(int mh){
 		if(_display == Display.inline){
 			
 		}
 		stageToUpdate = min(stageToUpdate, 2);
 		_maxHeight = mh;
+	}
+
+	int get line_height{
+		return _line_height;
 	}
 
 	set line_height(int lh){
@@ -77,9 +105,17 @@ class LTelementNode{
 		_line_height = lh;
 	}
 
+	int get border_top{
+		return _border_top;
+	}
+
 	set border_top(int bt){
 		stageToUpdate = min(stageToUpdate, 2);
 		_border_top = bt;
+	}
+
+	int get border_right{
+		return _border_right;
 	}
 
 	set border_right(int br){
@@ -87,9 +123,17 @@ class LTelementNode{
 		_border_right = br;
 	}
 
+	int get border_bottom{
+		return _border_bottom;
+	}
+
 	set border_bottom(int bb){
 		stageToUpdate = min(stageToUpdate, 2);
 		_border_bottom = bb;
+	}
+
+	int get border_left{
+		return _border_left;
 	}
 
 	set border_left(int bl){
@@ -98,9 +142,17 @@ class LTelementNode{
 	}
 
 
+	int get margin_top{
+		return _margin_top;
+	}
+
 	set margin_top(int mt){
 		stageToUpdate = min(stageToUpdate, 2);
 		_margin_top = mt;
+	}
+
+	int get margin_right{
+		return _margin_right;
 	}
 
 	set margin_right(int mr){
@@ -108,9 +160,17 @@ class LTelementNode{
 		_margin_right = mr;
 	}
 
+	int get margin_bottom{
+		return _margin_bottom;
+	}
+
 	set margin_bottom(int mb){
 		stageToUpdate = min(stageToUpdate, 2);
 		_margin_bottom = mb;
+	}
+
+	int get margin_left{
+		return _margin_left;
 	}
 
 	set margin_left(int ml){
@@ -119,9 +179,17 @@ class LTelementNode{
 	}
 
 
+	int get padding_top{
+		return _padding_top;
+	}
+
 	set padding_top(int pt){
 		stageToUpdate = min(stageToUpdate, 2);
 		_padding_top = pt;
+	}
+
+	int get padding_right{
+		return _padding_right;
 	}
 
 	set padding_right(int pr){
@@ -129,9 +197,17 @@ class LTelementNode{
 		_padding_right = pr;
 	}
 
+	int get padding_bottom{
+		return _padding_bottom;
+	}
+
 	set padding_bottom(int pb){
 		stageToUpdate = min(stageToUpdate, 2);
 		_padding_bottom = pb;
+	}
+
+	int get padding_left{
+		return _padding_left;
 	}
 
 	set padding_left(int pl){
@@ -139,7 +215,12 @@ class LTelementNode{
 		_padding_left = pl;
 	}
 
-	set left(int l){
+
+	int? get left{
+		return _left;
+	}
+
+	set left(int? l){
 		// left will affect sizes of non-relatively-positioned elements
 		// whose right is designated
 		if(_position != Position.relative && _right != null){
@@ -151,12 +232,20 @@ class LTelementNode{
 		_left = l;
 	}
 
-	set top(int t){
+	int? get top{
+		return _top;
+	}
+
+	set top(int? t){
 		stageToUpdate = min(stageToUpdate, 3);
 		_top = t;
 	}
 
-	set right(int r){
+	int? get right{
+		return _right;
+	}
+
+	set right(int? r){
 		if(_position == Position.relative){
 
 		}
@@ -170,7 +259,11 @@ class LTelementNode{
 		_right = r;
 	}
 
-	set bottom(int b){
+	int? get bottom{
+		return _bottom;
+	}
+
+	set bottom(int? b){
 		if(_position == Position.relative){
 
 		}
@@ -179,14 +272,26 @@ class LTelementNode{
 	}
 
 
+	bool get wrap{
+		return _wrap;
+	}
+
 	set wrap(bool wp){
 		stageToUpdate = 0;
 		_wrap = wp;
 	}
 
+	bool get fit_content{
+		return _fit_content;
+	}
+
 	set fit_content(bool fc){
 		stageToUpdate = 0;
 		_fit_content = fc;
+	}
+
+	Overflow get overflow{
+		return _overflow;
 	}
 
 	set overflow(Overflow ov){
@@ -197,14 +302,27 @@ class LTelementNode{
 		_overflow = ov;
 	}
 
+
+	Alignment get alignTracks{
+		return _alignTracks;
+	}
+
 	set alignTracks(Alignment at){
 		stageToUpdate = min(stageToUpdate, 3);
 		_alignTracks = at;
 	}
 
+	Alignment get alignItems{
+		return _alignItems;
+	}
+
 	set alignItems(Alignment ai){
 		stageToUpdate = min(stageToUpdate, 3);
 		_alignItems = ai;
+	}
+
+	Alignment get alignSelf{
+		return _alignSelf;
 	}
 
 	set alignSelf(Alignment asl){
@@ -274,7 +392,19 @@ class LTelementNode{
 	Alignment _alignItems = Alignment.start;
 	Alignment _alignSelf = Alignment.start;
 
-	bool _fillRowWidth = true;
+
+	int _calculatedMaxWidth = 0;
+	bool _needcalculateWidthstage1 = true;
+
+	int _calculatednoWrapRowWidth = 0;
+
+	int get calculatedWidth{
+		return _calculatedWidth;
+	}
+
+	int get calculatedHeight{
+		return _calculatedHeight;
+	}
 
 	int _calculatedWidth = 0;
 	int _calculatedHeight = 0;
@@ -298,9 +428,14 @@ class LTelementNode{
 
 	int _arrivedTraces = 0;
 
-	int _calculateRowWidth(){
+	// calculate 
+	int _calculateRowWidthStage0(){
 		int ret = 0;
-		
+		int noWrapRowWidth = 0;
+
+		// represents the width of the widest row when no wrap is applied
+		_calculatednoWrapRowWidth = 0;
+
 		for(final node in _children){
 			// Not relatively positioned elements take no space
 			// So exclude them from width calculation
@@ -308,27 +443,38 @@ class LTelementNode{
 				continue;
 			}
 
-			int currentWidth = node._calculatedWidth 
+			int currentWidth = node._rowWidth
+							+ node.border_left
+							+ node.border_right
+							+ node.padding_left
+							+ node.padding_right
 							+ node._margin_left 
 							+ node._margin_right;
 
-			int noWrapWidth = 0;
-			if(_wrap){
-				ret = max(ret, currentWidth);
+			if(node._display == Display.block){
+				noWrapRowWidth = max(noWrapRowWidth, currentWidth);
+				_calculatednoWrapRowWidth = max(_calculatednoWrapRowWidth, noWrapRowWidth);
+				noWrapRowWidth = 0;
 			}else{
-				if(node._display == Display.block){
-					ret = max(ret, noWrapWidth);
-					ret = max(ret, currentWidth);
-					noWrapWidth = 0;
-				}else{
-					noWrapWidth += currentWidth;
-				}
+				noWrapRowWidth += currentWidth;
 			}
+
+			ret = max(ret, currentWidth);
+		}
+
+		_calculatednoWrapRowWidth = max(noWrapRowWidth, _calculatednoWrapRowWidth);
+
+		if(!_wrap){
+			ret = _calculatednoWrapRowWidth;
 		}
 
 		if(_width != null){
 			int filledRowWidth = _width! - _padding_left - _padding_right
 										- _border_left - _border_right;
+			ret = max(ret, filledRowWidth);
+		}else{
+			int filledRowWidth = _minWidth - _padding_left - _padding_right
+											- _border_left - _border_right;
 			ret = max(ret, filledRowWidth);
 		}
 
@@ -336,8 +482,10 @@ class LTelementNode{
 	}
 
 	int _calculateWidthStage0(){
+		_needcalculateWidthstage1 = true;
+
 		if(_width != null){
-			_fillRowWidth = false;
+			_needcalculateWidthstage1 = false;
 			return _width!;
 		}
 		
@@ -349,14 +497,23 @@ class LTelementNode{
 			return _content_width;
 		}
 
-		int ret = _rowWidth + _padding_left + _padding_right
-							+ _border_left + _border_right;
+		int extraWidth = padding_left + _padding_right +
+						 _border_left + _border_right;
 
+		int ret = _calculatednoWrapRowWidth + extraWidth;
 
-		_fillRowWidth = !_fit_content;
-
-
-		return ret.clamp(_minWidth, _maxWidth);
+		if(ret > _maxWidth){
+			_needcalculateWidthstage1 = false;
+			_rowWidth = _maxWidth - extraWidth;
+			return _maxWidth;
+		}else if(ret < _minWidth){
+			if(_fit_content){
+				_needcalculateWidthstage1 = false;
+			}
+			_rowWidth = _minWidth - extraWidth;
+			return _minWidth;
+		}
+		return ret;
 	}
 
 	void _calculateWidthAbsoluteStage1(){
@@ -402,6 +559,28 @@ class LTelementNode{
 		}
 	}
 
+	void _calculateRowWidthStage1(){
+		_rowWidth = max(
+					_calculatedWidth -
+					_border_left -
+					_border_right -
+					_padding_left -
+					_padding_right,
+					_rowWidth
+		);
+	}
+
+	void _calculateWidthStage1(){
+		_calculateRowWidthStage1();
+		_arrangeChildrenInRows();
+		int minRestRowWidth = _rowWidth;
+		for(final row in _rows){
+			minRestRowWidth = min(minRestRowWidth, row.restWidth);
+		}
+		_calculatedWidth -= minRestRowWidth;
+		_calculateRowWidthStage1();
+	}
+
 	void _arrangeChildrenInRows(){
 		_rows.clear();
 		LTblockElementRow currentRow = LTblockElementRow(_rowWidth);
@@ -414,94 +593,132 @@ class LTelementNode{
 			}
 
 			switch(node._display){
-			  case Display.block:
-				// block elements occupy a row
-				if(currentRow.children.isNotEmpty){
-					currentRow.calculateWidthStage1();
-					currentRow = LTblockElementRow(_rowWidth);
-				}
-
-				int netRestWidth = _rowWidth - node._margin_left 
-											 - node._margin_right;
-
-				// It is guaranteed that _rowWidth can fit in at least an 
-				// arbitrary node in Stage0
-				if(node._fillRowWidth){
-					node._calculatedWidth = min(netRestWidth, node._maxWidth);
-				}
-
-				currentRow.restWidth = netRestWidth - node._calculatedWidth;
-
-				currentRow.children.add(node);
-				_rows.add(currentRow);
-
-				currentRow = LTblockElementRow(_rowWidth);
-				_rows.add(currentRow);
-
-				break;
-				
-			  case Display.inline_block:
-				int rowRestWidth = currentRow.restWidth;
-				if(node._fillRowWidth){
-					// if width rest in row is not enough, create a new row
-					if(!(currentRow.addFreeNode(node))){
+			  	case Display.block: {
+					// block elements occupy a row
+					if(currentRow.children.isNotEmpty){
 						currentRow.calculateWidthStage1();
 						currentRow = LTblockElementRow(_rowWidth);
-						currentRow.addFreeNode(node);
 						_rows.add(currentRow);
 					}
-				}else{
-					int occupiedWidth = node._calculatedWidth + 
-										node._margin_left + 
-										node._margin_right;
-					// if width rest in row is not enough, create a new row
-					if(rowRestWidth < occupiedWidth){
-						rowRestWidth = _rowWidth - occupiedWidth;
-						currentRow.calculateWidthStage1();
-						currentRow = LTblockElementRow(rowRestWidth);
-						currentRow.children.add(node);
-						_rows.add(currentRow);
-					}else{
-						currentRow.restWidth -= occupiedWidth;
-						currentRow.freeWidth -= occupiedWidth;
-						currentRow.children.add(node);
-					}
-				}
-				break;
-				
-			  case Display.inline:
-				int remainedContentWidth = node._content_width;
-				if(remainedContentWidth == 0){
-					return;
-				}
 
-				// if element allows wrap, fill remained width in row
-				// if there is content remained, create a new row and repeat
-				if(node._wrap){
-					while(remainedContentWidth > 0){
-						++_calculatedLines;
-						int rowRestWidth = currentRow.restWidth - remainedContentWidth;
-						currentRow.children.add(node);
-						if(rowRestWidth > 0){
-							currentRow.restWidth = rowRestWidth;
+					int netRestWidth = _rowWidth - node._margin_left 
+											 	- node._margin_right;
+
+					// It is guaranteed that _rowWidth can fit in at least an 
+					// arbitrary node in Stage0
+					if(!node._fit_content){
+						node._calculatedWidth = min(netRestWidth, node._maxWidth);
+						node._calculateRowWidthStage1();
+					}else{
+						node._calculateWidthStage1();
+					}
+					
+					currentRow.restWidth = netRestWidth - node._calculatedWidth;
+
+					currentRow.children.add(node);
+
+					currentRow = LTblockElementRow(_rowWidth);
+					_rows.add(currentRow);
+
+					break;
+				}
+				
+			  	case Display.inline_block: {
+					int rowRestWidth = currentRow.restWidth;
+					int margin = node._margin_left + node._margin_right;
+
+					int occupiedWidth = node._calculatedMaxWidth + margin;
+
+					if(node._needcalculateWidthstage1){
+						if(rowRestWidth < occupiedWidth){
+							if(_rowWidth < occupiedWidth){
+								node._calculatedWidth = _rowWidth - margin;
+								node._calculateWidthStage1();
+								currentRow.calculateWidthStage1();
+								if(node._fit_content){
+									currentRow = LTblockElementRow(_rowWidth - node._calculatedWidth - margin);
+									currentRow.children.add(node);
+								}else{
+									node._calculatedMaxWidth = node._calculatedWidth;
+									currentRow = LTblockElementRow(_rowWidth);
+									currentRow.freeWidth -= margin;
+									currentRow.addFreeNode(node);
+								}	
+								
+								_rows.add(currentRow);
+								continue;
+							}else{
+								currentRow.calculateWidthStage1();
+								currentRow = LTblockElementRow(_rowWidth);
+								_rows.add(currentRow);
+							}
+						}
+
+						node._calculatedWidth = node._calculatedMaxWidth;
+						node._calculateRowWidthStage1();
+
+						if(node._fit_content){
+							currentRow.restWidth -= occupiedWidth;
+							currentRow.freeWidth -= occupiedWidth;
+							currentRow.children.add(node);
 						}else{
-							currentRow.restWidth = 0;
-							currentRow = LTblockElementRow(_rowWidth);
+							currentRow.freeWidth -= margin;
+							currentRow.addFreeNode(node);
+						}
+					}else{
+						node._calculatedWidth = node._calculatedMaxWidth;
+						
+						// if width rest in row is not enough, create a new row
+						if(rowRestWidth < occupiedWidth){
+							rowRestWidth = _rowWidth - occupiedWidth;
+							currentRow.calculateWidthStage1();
+							currentRow = LTblockElementRow(rowRestWidth);
+							currentRow.children.add(node);
 							_rows.add(currentRow);
+						}else{
+							currentRow.restWidth -= occupiedWidth;
+							currentRow.freeWidth -= occupiedWidth;
+							currentRow.children.add(node);
 						}
 					}
-				}else{
-					++_calculatedLines;
-					if(currentRow.restWidth > remainedContentWidth){
-						currentRow.restWidth -= remainedContentWidth;
-					}else{
-						int rowRestWidth = _rowWidth - remainedContentWidth;
-						currentRow = LTblockElementRow(rowRestWidth);
-						_rows.add(currentRow);
-					}
-					currentRow.children.add(node);
+
+					break;
 				}
-				break;
+				
+			  	case Display.inline: {
+					int remainedContentWidth = node._content_width;
+					if(remainedContentWidth == 0){
+						return;
+					}
+
+					// if element allows wrap, fill remained width in row
+					// if there is content remained, create a new row and repeat
+					if(node._wrap){
+						while(remainedContentWidth > 0){
+							++_calculatedLines;
+							int rowRestWidth = currentRow.restWidth - remainedContentWidth;
+							currentRow.children.add(node);
+							if(rowRestWidth > 0){
+								currentRow.restWidth = rowRestWidth;
+							}else{
+								currentRow.restWidth = 0;
+								currentRow = LTblockElementRow(_rowWidth);
+								_rows.add(currentRow);
+							}
+						}
+					}else{
+						++_calculatedLines;
+						if(currentRow.restWidth > remainedContentWidth){
+							currentRow.restWidth -= remainedContentWidth;
+						}else{
+							int rowRestWidth = _rowWidth - remainedContentWidth;
+							currentRow = LTblockElementRow(rowRestWidth);
+							_rows.add(currentRow);
+						}
+						currentRow.children.add(node);
+					}
+					break;
+				  }
 			}
 		}
 
@@ -513,6 +730,7 @@ class LTelementNode{
 	// calculate height for relatively positioned elements and non-relatively-positioned 
 	// element whose height is not constrained by positioning
 	int _calculateHeightStage2(){
+		_calculatedRowHeightSum = 0;
 		for(final row in _rows){
 			_calculatedRowHeightSum += row.calcHeight();
 		}
@@ -546,10 +764,11 @@ class LTelementNode{
 										_padding_top -
 										_padding_bottom -
 										_border_top -
-										_border_bottom);
+										_border_bottom -
+										_calculatedRowHeightSum);
 			switch(_alignTracks){
 			  case Alignment.end:
-				currentY += (remainedHeight - _calculatedRowHeightSum);
+				currentY += remainedHeight;
 				break;
 			  
 			  case Alignment.center:
@@ -557,7 +776,7 @@ class LTelementNode{
 			  	break;
 			
 			  case Alignment.space_between:
-				spacingHeight = (remainedHeight / (_rows.length - 1)).round();
+				spacingHeight = (remainedHeight / max(_rows.length - 1, 1)).round();
 			  	break;
 			}
 		}
@@ -576,7 +795,7 @@ class LTelementNode{
 			  	break;
 			
 			  case Alignment.space_between:
-				spacingWidth = (row.restWidth / (row.children.length - 1)).round();
+				spacingWidth = (row.restWidth / max(row.children.length - 1, 1)).round();
 			  	break;
 			}
 
@@ -657,10 +876,10 @@ class LTelementNode{
 	// while bottom-up update functions return a flag indicating whether keep traversing
 	bool stage0Update(){
 		stageToUpdate = 1;
-		_rowWidth = _calculateRowWidth();
+		_rowWidth = _calculateRowWidthStage0();
 		int tempWidth = _calculateWidthStage0();
-		if(tempWidth != _calculatedWidth){
-			_calculatedWidth = tempWidth;
+		if(tempWidth != _calculatedMaxWidth){
+			_calculatedMaxWidth = tempWidth;
 			return true;
 		}
 		return false;
@@ -724,11 +943,6 @@ class LTelementNode{
 	/// return true if [node] is in children, otherwise return false.
 	bool removeChild(LTelementNode node){
 		if(_children.remove(node)){
-			if(node._position == Position.relative){
-				for(final row in _rows){
-					row.children.remove(node);
-				}
-			}
 			stageToUpdate = 0;
 			return true;
 		}
@@ -865,7 +1079,8 @@ class LTblockElementRow{
 
 	// add an inline-block with fit-content set to false
 	// return true if rest width can fit, otherwise return false
-	bool addFreeNode(LTelementNode node){
+	void addFreeNode(LTelementNode node){
+		/*
 		int margin = node._margin_right + node._margin_left;
 		int occupiedWidth = node._calculatedWidth + margin;
 		if(restWidth < occupiedWidth){
@@ -873,9 +1088,9 @@ class LTblockElementRow{
 		}
 		restWidth -= occupiedWidth;
 		freeWidth -= margin;
+		*/
 		children.add(node);
 		freeNode.add(node);
-		return true;
 	}
 
 	int calcHeight(){
@@ -900,28 +1115,36 @@ class LTblockElementRow{
 	void calculateWidthStage1(){
 		double avgWidth = freeWidth / freeNode.length;
 		while(true){
+			int widthSum = 0;
 			bool finished = true;
 			for(final node in freeNode){
 				if(node._maxWidth < avgWidth){
 					node._calculatedWidth = node._maxWidth;
+					node._calculateRowWidthStage1();
 					freeWidth -= node._maxWidth;
+					restWidth -= node._maxWidth;
 					freeNode.remove(node);
 					finished = false;
 					break;
 				}
 
-				if(node._minWidth > avgWidth){
-					node._calculatedWidth = node._minWidth;
-					freeWidth -= node._minWidth;
+				if(node._calculatedMaxWidth > avgWidth){
+					node._calculatedWidth = node._calculatedMaxWidth;
+					node._calculateRowWidthStage1();
+					freeWidth -= node._calculatedWidth;
+					restWidth -= node._calculatedWidth;
 					freeNode.remove(node);
 					finished = false;
 					break;
 				}
 
 				node._calculatedWidth = avgWidth.floor();
+				node._calculateRowWidthStage1();
+				widthSum += avgWidth.floor();;
 			}
 
 			if(finished){
+				restWidth -= widthSum;
 				break;
 			}else{
 				avgWidth = freeWidth / freeNode.length;

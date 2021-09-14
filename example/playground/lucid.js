@@ -2768,7 +2768,7 @@
       child.parent.removeChild$1(child);
       C.JSArray_methods.$indexSet($.elements, id, null);
     },
-    display: function(id, disp) {
+    setDisplay: function(id, disp) {
       var t1, t2;
       H._asInt(id);
       H._asInt(disp);
@@ -2777,12 +2777,18 @@
       t1 = $.elements[id];
       t1.toString;
       if (disp < 0 || disp >= 3)
-        return H.ioore(C.List_IMQ, disp);
-      t2 = C.List_IMQ[disp];
+        return H.ioore(C.List_8eb, disp);
+      t2 = C.List_8eb[disp];
       t1.stageToUpdate = 0;
       t1._display = t2;
     },
-    position: function(id, ps) {
+    getDisplay: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._display.index;
+    },
+    setPosition: function(id, ps) {
       var t1, t2;
       H._asInt(id);
       H._asInt(ps);
@@ -2791,12 +2797,18 @@
       t1 = $.elements[id];
       t1.toString;
       if (ps < 0 || ps >= 3)
-        return H.ioore(C.List_ksT, ps);
-      t2 = C.List_ksT[ps];
+        return H.ioore(C.List_kyy, ps);
+      t2 = C.List_kyy[ps];
       t1.stageToUpdate = 0;
       t1._position = t2;
     },
-    width: function(id, w) {
+    getPosition: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._position.index;
+    },
+    setWidth: function(id, w) {
       var t1;
       H._asInt(id);
       H._asInt(w);
@@ -2806,7 +2818,13 @@
       t1.stageToUpdate = 0;
       t1._width = w;
     },
-    minWidth: function(id, mw) {
+    getWidth: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._width;
+    },
+    setMinWidth: function(id, mw) {
       var t1;
       H._asInt(id);
       H._asInt(mw);
@@ -2816,7 +2834,13 @@
       t1.stageToUpdate = 0;
       t1._minWidth = mw;
     },
-    maxWidth: function(id, mw) {
+    getMinWidth: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._minWidth;
+    },
+    setMaxWidth: function(id, mw) {
       var t1;
       H._asInt(id);
       H._asInt(mw);
@@ -2826,7 +2850,13 @@
       t1.stageToUpdate = 0;
       t1._maxWidth = mw;
     },
-    height: function(id, h) {
+    getMaxWidth: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._maxWidth;
+    },
+    setHeight: function(id, h) {
       var t1;
       H._asInt(id);
       H._asInt(h);
@@ -2836,7 +2866,13 @@
       t1.set$stageToUpdate(Math.min(t1.stageToUpdate, 2));
       t1._height = h;
     },
-    minHeight: function(id, mh) {
+    getHeight: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._height;
+    },
+    setMinHeight: function(id, mh) {
       var t1;
       H._asInt(id);
       H._asInt(mh);
@@ -2846,7 +2882,13 @@
       t1.set$stageToUpdate(Math.min(t1.stageToUpdate, 2));
       t1._minHeight = mh;
     },
-    maxHeight: function(id, mh) {
+    getMinHeight: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._minHeight;
+    },
+    setMaxHeight: function(id, mh) {
       var t1;
       H._asInt(id);
       H._asInt(mh);
@@ -2856,7 +2898,13 @@
       t1.set$stageToUpdate(Math.min(t1.stageToUpdate, 2));
       t1._maxHeight = mh;
     },
-    line_height: function(id, lh) {
+    getMaxHeight: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._maxHeight;
+    },
+    setLine_height: function(id, lh) {
       var t1;
       H._asInt(id);
       H._asInt(lh);
@@ -2866,7 +2914,13 @@
       t1.set$stageToUpdate(Math.min(t1.stageToUpdate, 2));
       t1._line_height = lh;
     },
-    border_top: function(id, bt) {
+    getLine_height: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._line_height;
+    },
+    setBorder_top: function(id, bt) {
       var t1;
       H._asInt(id);
       H._asInt(bt);
@@ -2876,7 +2930,13 @@
       t1.set$stageToUpdate(Math.min(t1.stageToUpdate, 2));
       t1._border_top = bt;
     },
-    border_right: function(id, br) {
+    getBorder_top: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._border_top;
+    },
+    setBorder_right: function(id, br) {
       var t1;
       H._asInt(id);
       H._asInt(br);
@@ -2886,7 +2946,13 @@
       t1.stageToUpdate = 0;
       t1._border_right = br;
     },
-    border_bottom: function(id, bb) {
+    getBorder_right: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._border_right;
+    },
+    setBorder_bottom: function(id, bb) {
       var t1;
       H._asInt(id);
       H._asInt(bb);
@@ -2896,7 +2962,13 @@
       t1.set$stageToUpdate(Math.min(t1.stageToUpdate, 2));
       t1._border_bottom = bb;
     },
-    border_left: function(id, bl) {
+    getBorder_bottom: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._border_bottom;
+    },
+    setBorder_left: function(id, bl) {
       var t1;
       H._asInt(id);
       H._asInt(bl);
@@ -2906,7 +2978,13 @@
       t1.stageToUpdate = 0;
       t1._border_left = bl;
     },
-    margin_top: function(id, mt) {
+    getBorder_left: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._border_left;
+    },
+    setMargin_top: function(id, mt) {
       var t1;
       H._asInt(id);
       H._asInt(mt);
@@ -2916,7 +2994,13 @@
       t1.set$stageToUpdate(Math.min(t1.stageToUpdate, 2));
       t1._margin_top = mt;
     },
-    margin_right: function(id, mr) {
+    getMargin_top: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._margin_top;
+    },
+    setMargin_right: function(id, mr) {
       var t1;
       H._asInt(id);
       H._asInt(mr);
@@ -2926,7 +3010,13 @@
       t1.stageToUpdate = 0;
       t1._margin_right = mr;
     },
-    margin_bottom: function(id, mb) {
+    getMargin_right: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._margin_right;
+    },
+    setMargin_bottom: function(id, mb) {
       var t1;
       H._asInt(id);
       H._asInt(mb);
@@ -2936,7 +3026,13 @@
       t1.set$stageToUpdate(Math.min(t1.stageToUpdate, 2));
       t1._margin_bottom = mb;
     },
-    margin_left: function(id, ml) {
+    getMargin_bottom: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._margin_bottom;
+    },
+    setMargin_left: function(id, ml) {
       var t1;
       H._asInt(id);
       H._asInt(ml);
@@ -2946,7 +3042,13 @@
       t1.stageToUpdate = 0;
       t1._margin_left = ml;
     },
-    padding_top: function(id, pt) {
+    getMargin_left: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._margin_left;
+    },
+    setPadding_top: function(id, pt) {
       var t1;
       H._asInt(id);
       H._asInt(pt);
@@ -2956,7 +3058,13 @@
       t1.set$stageToUpdate(Math.min(t1.stageToUpdate, 2));
       t1._padding_top = pt;
     },
-    padding_right: function(id, pr) {
+    getPadding_top: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._padding_top;
+    },
+    setPadding_right: function(id, pr) {
       var t1;
       H._asInt(id);
       H._asInt(pr);
@@ -2966,7 +3074,13 @@
       t1.stageToUpdate = 0;
       t1._padding_right = pr;
     },
-    padding_bottom: function(id, pb) {
+    getPadding_right: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._padding_right;
+    },
+    setPadding_bottom: function(id, pb) {
       var t1;
       H._asInt(id);
       H._asInt(pb);
@@ -2976,7 +3090,13 @@
       t1.set$stageToUpdate(Math.min(t1.stageToUpdate, 2));
       t1._padding_bottom = pb;
     },
-    padding_left: function(id, pl) {
+    getPadding_bottom: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._padding_bottom;
+    },
+    setPadding_left: function(id, pl) {
       var t1;
       H._asInt(id);
       H._asInt(pl);
@@ -2986,7 +3106,13 @@
       t1.stageToUpdate = 0;
       t1._padding_left = pl;
     },
-    left: function(id, l) {
+    getPadding_left: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._padding_left;
+    },
+    setLeft: function(id, l) {
       var t1, t2, t3;
       H._asInt(id);
       H._asInt(l);
@@ -3001,7 +3127,13 @@
         t1.set$stageToUpdate(Math.min(t3, 3));
       t1._left = l;
     },
-    top: function(id, t) {
+    getLeft: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._left;
+    },
+    setTop: function(id, t) {
       var t1;
       H._asInt(id);
       H._asInt(t);
@@ -3011,7 +3143,13 @@
       t1.set$stageToUpdate(Math.min(t1.stageToUpdate, 3));
       t1._top = t;
     },
-    right: function(id, r) {
+    getTop: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._top;
+    },
+    setRight: function(id, r) {
       var t1, t2, t3;
       H._asInt(id);
       H._asInt(r);
@@ -3026,7 +3164,13 @@
         t1.set$stageToUpdate(Math.min(t3, 3));
       t1._right = r;
     },
-    bottom: function(id, b) {
+    getRight: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._right;
+    },
+    setBottom: function(id, b) {
       var t1;
       H._asInt(id);
       H._asInt(b);
@@ -3036,7 +3180,13 @@
       t1.set$stageToUpdate(Math.min(t1.stageToUpdate, 3));
       t1._bottom = b;
     },
-    wrap: function(id, wp) {
+    getBottom: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._bottom;
+    },
+    setWrap: function(id, wp) {
       var t1;
       H._asInt(id);
       H._asBool(wp);
@@ -3046,7 +3196,13 @@
       t1.stageToUpdate = 0;
       t1._wrap = wp;
     },
-    fit_content: function(id, fc) {
+    getWrap: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._wrap;
+    },
+    setFit_content: function(id, fc) {
       var t1;
       H._asInt(id);
       H._asBool(fc);
@@ -3056,7 +3212,13 @@
       t1.stageToUpdate = 0;
       t1._fit_content = fc;
     },
-    overflow: function(id, ov) {
+    getFit_content: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._fit_content;
+    },
+    setOverflow: function(id, ov) {
       var t1;
       H._asInt(id);
       H._asInt(ov);
@@ -3065,10 +3227,16 @@
       t1 = $.elements[id];
       t1.toString;
       if (ov < 0 || ov >= 3)
-        return H.ioore(C.List_O92, ov);
-      t1.set$overflow(C.List_O92[ov]);
+        return H.ioore(C.List_oGx, ov);
+      t1.set$overflow(C.List_oGx[ov]);
     },
-    alignTracks: function(id, at) {
+    getOverflow: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._overflow.index;
+    },
+    setAlignTracks: function(id, at) {
       var t1, t2;
       H._asInt(id);
       H._asInt(at);
@@ -3077,12 +3245,18 @@
       t1 = $.elements[id];
       t1.toString;
       if (at < 0 || at >= 4)
-        return H.ioore(C.List_4AN, at);
-      t2 = C.List_4AN[at];
+        return H.ioore(C.List_90K, at);
+      t2 = C.List_90K[at];
       t1.set$stageToUpdate(Math.min(t1.stageToUpdate, 3));
       t1._alignTracks = t2;
     },
-    alignItems: function(id, ai) {
+    getAlignTracks: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._alignTracks.index;
+    },
+    setAlignItems: function(id, ai) {
       var t1, t2;
       H._asInt(id);
       H._asInt(ai);
@@ -3091,12 +3265,18 @@
       t1 = $.elements[id];
       t1.toString;
       if (ai < 0 || ai >= 4)
-        return H.ioore(C.List_4AN, ai);
-      t2 = C.List_4AN[ai];
+        return H.ioore(C.List_90K, ai);
+      t2 = C.List_90K[ai];
       t1.set$stageToUpdate(Math.min(t1.stageToUpdate, 3));
       t1._alignItems = t2;
     },
-    alignSelf: function(id, asl) {
+    getAlignItems: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._alignItems.index;
+    },
+    setAlignSelf: function(id, asl) {
       var t1, t2;
       H._asInt(id);
       H._asInt(asl);
@@ -3105,10 +3285,16 @@
       t1 = $.elements[id];
       t1.toString;
       if (asl < 0 || asl >= 4)
-        return H.ioore(C.List_4AN, asl);
-      t2 = C.List_4AN[asl];
+        return H.ioore(C.List_90K, asl);
+      t2 = C.List_90K[asl];
       t1.set$stageToUpdate(Math.min(t1.stageToUpdate, 3));
       t1._alignSelf = t2;
+    },
+    getAlignSelf: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._alignSelf.index;
     },
     initializeLayout: function() {
       $.$get$lucid().initializeLayout$0();
@@ -3122,6 +3308,18 @@
       t2 = $.elements[id];
       t2.toString;
       t1.reflowAt$1(t2);
+    },
+    getCalculatedWidth: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._calculatedWidth;
+    },
+    getCalculatedHeight: function(id) {
+      H._asInt(id);
+      if (id < 0 || id >= $.elements.length)
+        return H.ioore($.elements, id);
+      return $.elements[id]._calculatedHeight;
     },
     getCalculatedBoundingRect: function(id) {
       var object, rect;
@@ -3154,7 +3352,7 @@
     }},
   K = {
     LTelementNode$: function(disp, id) {
-      return new K.LTelementNode(id, H.setRuntimeTypeInfo([], type$.JSArray_LTelementNode), disp, C.Position_0, C.Alignment_0, C.Alignment_0, C.Alignment_0, new X.Rect(0, 0, 0, 0), new X.Rect(0, 0, 0, 0), new X.Rect(0, 0, 0, 0), new X.Rect(0, 0, 0, 0), H.setRuntimeTypeInfo([], type$.JSArray_LTblockElementRow));
+      return new K.LTelementNode(id, H.setRuntimeTypeInfo([], type$.JSArray_LTelementNode), disp, C.Position_0, C.Overflow_0, C.Alignment_0, C.Alignment_0, C.Alignment_0, new X.Rect(0, 0, 0, 0), new X.Rect(0, 0, 0, 0), new X.Rect(0, 0, 0, 0), new X.Rect(0, 0, 0, 0), H.setRuntimeTypeInfo([], type$.JSArray_LTblockElementRow));
     },
     LTelementNode_traverseUpTill: function(nodes, callBack, endPred) {
       var t1, _i, node, $parent, t2, grandparent,
@@ -3185,7 +3383,7 @@
       }
       return ret;
     },
-    LTelementNode: function LTelementNode(t0, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11) {
+    LTelementNode: function LTelementNode(t0, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12) {
       var _ = this;
       _.id = t0;
       _.parent = null;
@@ -3202,37 +3400,45 @@
       _._padding_left = _._padding_bottom = _._padding_right = _._padding_top = _._margin_left = _._margin_bottom = _._margin_right = _._margin_top = _._border_left = _._border_bottom = _._border_right = _._border_top = _._line_height = 0;
       _._bottom = _._right = _._top = _._left = null;
       _._fit_content = _._wrap = true;
-      _._alignTracks = t4;
-      _._alignItems = t5;
-      _._alignSelf = t6;
+      _._overflow = t4;
+      _._alignTracks = t5;
+      _._alignItems = t6;
+      _._alignSelf = t7;
       _._fillRowWidth = true;
       _._calculatedRowHeightSum = _._calculatedHeight = _._calculatedWidth = 0;
-      _._calculatedRelativeBoundingRect = t7;
-      _._calculatedAbsoluteBoundingRect = t8;
-      _._calculatedAbsoluteClippingRect = t9;
-      _._calculatedAbsoluteViewportRect = t10;
+      _._calculatedRelativeBoundingRect = t8;
+      _._calculatedAbsoluteBoundingRect = t9;
+      _._calculatedAbsoluteClippingRect = t10;
+      _._calculatedAbsoluteViewportRect = t11;
       _._rowWidth = _._calculatedLines = 0;
-      _._rows = t11;
+      _._rows = t12;
       _._arrivedTraces = 0;
     },
     LTelementNode__calculateLayoutFixedStage1_closure: function LTelementNode__calculateLayoutFixedStage1_closure() {
     },
     LTelementNode__calculateLayoutFixedStage1_closure0: function LTelementNode__calculateLayoutFixedStage1_closure0() {
     },
-    LTblockElementRow: function LTblockElementRow(t0, t1) {
-      this.height = 0;
-      this.restWidth = t0;
-      this.children = t1;
+    LTblockElementRow: function LTblockElementRow(t0, t1, t2, t3) {
+      var _ = this;
+      _.height = 0;
+      _.restWidth = t0;
+      _.freeWidth = t1;
+      _.children = t2;
+      _.freeNode = t3;
     }
   },
-  E = {Display: function Display(t0) {
-      this._name = t0;
-    }, Position: function Position(t0) {
-      this._name = t0;
-    }, Overflow: function Overflow(t0) {
-      this._name = t0;
-    }, Alignment: function Alignment(t0) {
-      this._name = t0;
+  E = {Display: function Display(t0, t1) {
+      this.index = t0;
+      this._name = t1;
+    }, Position: function Position(t0, t1) {
+      this.index = t0;
+      this._name = t1;
+    }, Overflow: function Overflow(t0, t1) {
+      this.index = t0;
+      this._name = t1;
+    }, Alignment: function Alignment(t0, t1) {
+      this.index = t0;
+      this._name = t1;
     }},
   T = {Lucid: function Lucid(t0) {
       this.rootNode = t0;
@@ -3254,48 +3460,84 @@
     }},
   L = {
     main: function() {
-      var t1, t2, t3;
+      var t1, t2, t3, t4;
       self.initializeRootNode = P.allowInterop(N.jsInternal__initializeRootNode$closure(), type$.int_Function_int_int);
-      self.addChild = P.allowInterop(N.jsInternal__addChild$closure(), type$.int_Function_int);
-      t1 = type$.void_Function_int;
-      self.removeChild = P.allowInterop(N.jsInternal__removeChild$closure(), t1);
-      t2 = type$.void_Function_int_int;
-      self.setDisplay = P.allowInterop(N.jsInternal__display$closure(), t2);
-      self.setPosition = P.allowInterop(N.jsInternal__position$closure(), t2);
-      self.setWidth = P.allowInterop(N.jsInternal__width$closure(), t2);
-      self.setMinWidth = P.allowInterop(N.jsInternal__minWidth$closure(), t2);
-      self.setMaxWidth = P.allowInterop(N.jsInternal__maxWidth$closure(), t2);
-      self.setHeight = P.allowInterop(N.jsInternal__height$closure(), t2);
-      self.setMinHeight = P.allowInterop(N.jsInternal__minHeight$closure(), t2);
-      self.setMaxHeight = P.allowInterop(N.jsInternal__maxHeight$closure(), t2);
-      self.setLine_height = P.allowInterop(N.jsInternal__line_height$closure(), t2);
-      self.setBorder_top = P.allowInterop(N.jsInternal__border_top$closure(), t2);
-      self.setBorder_right = P.allowInterop(N.jsInternal__border_right$closure(), t2);
-      self.setBorder_bottom = P.allowInterop(N.jsInternal__border_bottom$closure(), t2);
-      self.setBorder_left = P.allowInterop(N.jsInternal__border_left$closure(), t2);
-      self.setMargin_top = P.allowInterop(N.jsInternal__margin_top$closure(), t2);
-      self.setMargin_right = P.allowInterop(N.jsInternal__margin_right$closure(), t2);
-      self.setMargin_bottom = P.allowInterop(N.jsInternal__margin_bottom$closure(), t2);
-      self.setMargin_left = P.allowInterop(N.jsInternal__margin_left$closure(), t2);
-      self.setPadding_top = P.allowInterop(N.jsInternal__padding_top$closure(), t2);
-      self.setPadding_right = P.allowInterop(N.jsInternal__padding_right$closure(), t2);
-      self.setPadding_bottom = P.allowInterop(N.jsInternal__padding_bottom$closure(), t2);
-      self.setPadding_left = P.allowInterop(N.jsInternal__padding_left$closure(), t2);
-      self.setLeft = P.allowInterop(N.jsInternal__left$closure(), t2);
-      self.setTop = P.allowInterop(N.jsInternal__top$closure(), t2);
-      self.setRight = P.allowInterop(N.jsInternal__right$closure(), t2);
-      self.setBottom = P.allowInterop(N.jsInternal__bottom$closure(), t2);
-      t3 = type$.void_Function_int_bool;
-      self.setWrap = P.allowInterop(N.jsInternal__wrap$closure(), t3);
-      self.setFit_content = P.allowInterop(N.jsInternal__fit_content$closure(), t3);
-      self.setOverflow = P.allowInterop(N.jsInternal__overflow$closure(), t2);
-      self.setAlignTracks = P.allowInterop(N.jsInternal__alignTracks$closure(), t2);
-      self.setAlignItems = P.allowInterop(N.jsInternal__alignItems$closure(), t2);
-      self.setAlignSelf = P.allowInterop(N.jsInternal__alignSelf$closure(), t2);
+      t1 = type$.int_Function_int;
+      self.addChild = P.allowInterop(N.jsInternal__addChild$closure(), t1);
+      t2 = type$.void_Function_int;
+      self.removeChild = P.allowInterop(N.jsInternal__removeChild$closure(), t2);
+      t3 = type$.void_Function_int_int;
+      self.setDisplay = P.allowInterop(N.jsInternal__setDisplay$closure(), t3);
+      self.setPosition = P.allowInterop(N.jsInternal__setPosition$closure(), t3);
+      self.setWidth = P.allowInterop(N.jsInternal__setWidth$closure(), t3);
+      self.setMinWidth = P.allowInterop(N.jsInternal__setMinWidth$closure(), t3);
+      self.setMaxWidth = P.allowInterop(N.jsInternal__setMaxWidth$closure(), t3);
+      self.setHeight = P.allowInterop(N.jsInternal__setHeight$closure(), t3);
+      self.setMinHeight = P.allowInterop(N.jsInternal__setMinHeight$closure(), t3);
+      self.setMaxHeight = P.allowInterop(N.jsInternal__setMaxHeight$closure(), t3);
+      self.setLine_height = P.allowInterop(N.jsInternal__setLine_height$closure(), t3);
+      self.setBorder_top = P.allowInterop(N.jsInternal__setBorder_top$closure(), t3);
+      self.setBorder_right = P.allowInterop(N.jsInternal__setBorder_right$closure(), t3);
+      self.setBorder_bottom = P.allowInterop(N.jsInternal__setBorder_bottom$closure(), t3);
+      self.setBorder_left = P.allowInterop(N.jsInternal__setBorder_left$closure(), t3);
+      self.setMargin_top = P.allowInterop(N.jsInternal__setMargin_top$closure(), t3);
+      self.setMargin_right = P.allowInterop(N.jsInternal__setMargin_right$closure(), t3);
+      self.setMargin_bottom = P.allowInterop(N.jsInternal__setMargin_bottom$closure(), t3);
+      self.setMargin_left = P.allowInterop(N.jsInternal__setMargin_left$closure(), t3);
+      self.setPadding_top = P.allowInterop(N.jsInternal__setPadding_top$closure(), t3);
+      self.setPadding_right = P.allowInterop(N.jsInternal__setPadding_right$closure(), t3);
+      self.setPadding_bottom = P.allowInterop(N.jsInternal__setPadding_bottom$closure(), t3);
+      self.setPadding_left = P.allowInterop(N.jsInternal__setPadding_left$closure(), t3);
+      self.setLeft = P.allowInterop(N.jsInternal__setLeft$closure(), t3);
+      self.setTop = P.allowInterop(N.jsInternal__setTop$closure(), t3);
+      self.setRight = P.allowInterop(N.jsInternal__setRight$closure(), t3);
+      self.setBottom = P.allowInterop(N.jsInternal__setBottom$closure(), t3);
+      t4 = type$.void_Function_int_bool;
+      self.setWrap = P.allowInterop(N.jsInternal__setWrap$closure(), t4);
+      self.setFit_content = P.allowInterop(N.jsInternal__setFit_content$closure(), t4);
+      self.setOverflow = P.allowInterop(N.jsInternal__setOverflow$closure(), t3);
+      self.setAlignTracks = P.allowInterop(N.jsInternal__setAlignTracks$closure(), t3);
+      self.setAlignItems = P.allowInterop(N.jsInternal__setAlignItems$closure(), t3);
+      self.setAlignSelf = P.allowInterop(N.jsInternal__setAlignSelf$closure(), t3);
+      self.getDisplay = P.allowInterop(N.jsInternal__getDisplay$closure(), t1);
+      self.getPosition = P.allowInterop(N.jsInternal__getPosition$closure(), t1);
+      t3 = type$.nullable_int_Function_int;
+      self.getWidth = P.allowInterop(N.jsInternal__getWidth$closure(), t3);
+      self.getMinWidth = P.allowInterop(N.jsInternal__getMinWidth$closure(), t1);
+      self.getMaxWidth = P.allowInterop(N.jsInternal__getMaxWidth$closure(), t1);
+      self.getHeight = P.allowInterop(N.jsInternal__getHeight$closure(), t3);
+      self.getMinHeight = P.allowInterop(N.jsInternal__getMinHeight$closure(), t1);
+      self.getMaxHeight = P.allowInterop(N.jsInternal__getMaxHeight$closure(), t1);
+      self.getLine_height = P.allowInterop(N.jsInternal__getLine_height$closure(), t1);
+      self.getBorder_top = P.allowInterop(N.jsInternal__getBorder_top$closure(), t1);
+      self.getBorder_right = P.allowInterop(N.jsInternal__getBorder_right$closure(), t1);
+      self.getBorder_bottom = P.allowInterop(N.jsInternal__getBorder_bottom$closure(), t1);
+      self.getBorder_left = P.allowInterop(N.jsInternal__getBorder_left$closure(), t1);
+      self.getMargin_top = P.allowInterop(N.jsInternal__getMargin_top$closure(), t1);
+      self.getMargin_right = P.allowInterop(N.jsInternal__getMargin_right$closure(), t1);
+      self.getMargin_bottom = P.allowInterop(N.jsInternal__getMargin_bottom$closure(), t1);
+      self.getMargin_left = P.allowInterop(N.jsInternal__getMargin_left$closure(), t1);
+      self.getPadding_top = P.allowInterop(N.jsInternal__getPadding_top$closure(), t1);
+      self.getPadding_right = P.allowInterop(N.jsInternal__getPadding_right$closure(), t1);
+      self.getPadding_bottom = P.allowInterop(N.jsInternal__getPadding_bottom$closure(), t1);
+      self.getPadding_left = P.allowInterop(N.jsInternal__getPadding_left$closure(), t1);
+      self.getLeft = P.allowInterop(N.jsInternal__getLeft$closure(), t3);
+      self.getTop = P.allowInterop(N.jsInternal__getTop$closure(), t3);
+      self.getRight = P.allowInterop(N.jsInternal__getRight$closure(), t3);
+      self.getBottom = P.allowInterop(N.jsInternal__getBottom$closure(), t3);
+      t3 = type$.bool_Function_int;
+      self.getWrap = P.allowInterop(N.jsInternal__getWrap$closure(), t3);
+      self.getFit_content = P.allowInterop(N.jsInternal__getFit_content$closure(), t3);
+      self.getOverflow = P.allowInterop(N.jsInternal__getOverflow$closure(), t1);
+      self.getAlignTracks = P.allowInterop(N.jsInternal__getAlignTracks$closure(), t1);
+      self.getAlignItems = P.allowInterop(N.jsInternal__getAlignItems$closure(), t1);
+      self.getAlignSelf = P.allowInterop(N.jsInternal__getAlignSelf$closure(), t1);
       self.initializeLayout = P.allowInterop(N.jsInternal__initializeLayout$closure(), type$.void_Function);
-      self.reflowAt = P.allowInterop(N.jsInternal__reflowAt$closure(), t1);
+      self.reflowAt = P.allowInterop(N.jsInternal__reflowAt$closure(), t2);
+      self.getCalculatedWidth = P.allowInterop(N.jsInternal__getCalculatedWidth$closure(), t1);
+      self.getCalculatedHeight = P.allowInterop(N.jsInternal__getCalculatedHeight$closure(), t1);
       self.getCalculatedBoundingRect = P.allowInterop(N.jsInternal__getCalculatedBoundingRect$closure(), type$.Object_Function_int);
-      self.inspectRecursive = P.allowInterop(N.jsInternal__inspectRecursive$closure(), t1);
+      self.inspectRecursive = P.allowInterop(N.jsInternal__inspectRecursive$closure(), t2);
     }
   };
   var holders = [C, H, J, P, W, N, X, K, E, T, L];
@@ -3467,6 +3709,20 @@
     get$isNegative: function(receiver) {
       return receiver === 0 ? 1 / receiver < 0 : receiver < 0;
     },
+    floor$0: function(receiver) {
+      var truncated, d;
+      if (receiver >= 0) {
+        if (receiver <= 2147483647)
+          return receiver | 0;
+      } else if (receiver >= -2147483648) {
+        truncated = receiver | 0;
+        return receiver === truncated ? truncated : truncated - 1;
+      }
+      d = Math.floor(receiver);
+      if (isFinite(d))
+        return d;
+      throw H.wrapException(P.UnsupportedError$("" + receiver + ".floor()"));
+    },
     round$0: function(receiver) {
       if (receiver > 0) {
         if (receiver !== 1 / 0)
@@ -3635,7 +3891,7 @@
       C.JSArray_methods.add$1(this.$arguments, argument);
       ++t1.argumentCount;
     },
-    $signature: 5
+    $signature: 8
   };
   H.Closure.prototype = {
     toString$0: function(_) {
@@ -3842,19 +4098,19 @@
     call$1: function(o) {
       return this.getTag(o);
     },
-    $signature: 6
+    $signature: 9
   };
   H.initHooks_closure0.prototype = {
     call$2: function(o, tag) {
       return this.getUnknownTag(o, tag);
     },
-    $signature: 7
+    $signature: 10
   };
   H.initHooks_closure1.prototype = {
     call$1: function(tag) {
       return this.prototypeForTag(H._asString(tag));
     },
-    $signature: 8
+    $signature: 11
   };
   H.Rti.prototype = {
     _eval$1: function(recipe) {
@@ -3884,7 +4140,7 @@
       t1._contents = t2 + ": ";
       t1._contents += H.S(v);
     },
-    $signature: 9
+    $signature: 12
   };
   P.MapMixin.prototype = {
     get$length: function(_) {
@@ -3923,7 +4179,7 @@
       t1._contents += P.Error_safeToString(value);
       t2.comma = ", ";
     },
-    $signature: 10
+    $signature: 13
   };
   P.Error.prototype = {};
   P.AssertionError.prototype = {
@@ -4084,7 +4340,7 @@
       H.printString("id: " + H.S(node.id) + ", left: " + node._calculatedAbsoluteBoundingRect.toString$0(0));
       return null;
     },
-    $signature: 1
+    $signature: 2
   };
   X.Rect.prototype = {
     toString$0: function(_) {
@@ -4095,6 +4351,7 @@
   K.LTelementNode.prototype = {
     set$overflow: function(ov) {
       this.set$stageToUpdate(Math.min(this.stageToUpdate, 4));
+      this._overflow = ov;
     },
     _calculateRowWidth$0: function() {
       var t1, t2, t3, ret, _i, node, currentWidth, _this = this;
@@ -4178,68 +4435,56 @@
       }
     },
     _arrangeChildrenInRows$0: function() {
-      var t2, currentRow, t3, t4, _i, node, netRestWidth, rowRestWidth, childWidth, t5, t6, t7, t8, t9, _this = this,
+      var t2, t3, currentRow, t4, _i, node, t5, netRestWidth, rowRestWidth, occupiedWidth, _this = this,
         t1 = _this._rows;
       C.JSArray_methods.set$length(t1, 0);
-      t2 = type$.JSArray_LTelementNode;
-      currentRow = new K.LTblockElementRow(_this._rowWidth, H.setRuntimeTypeInfo([], t2));
+      t2 = _this._rowWidth;
+      t3 = type$.JSArray_LTelementNode;
+      currentRow = new K.LTblockElementRow(t2, t2, H.setRuntimeTypeInfo([], t3), H.setRuntimeTypeInfo([], t3));
       C.JSArray_methods.add$1(t1, currentRow);
-      for (t3 = _this._children, t4 = t3.length, _i = 0; _i < t3.length; t3.length === t4 || (0, H.throwConcurrentModificationError)(t3), ++_i) {
-        node = t3[_i];
+      for (t2 = _this._children, t4 = t2.length, _i = 0; _i < t2.length; t2.length === t4 || (0, H.throwConcurrentModificationError)(t2), ++_i) {
+        node = t2[_i];
         if (node._position !== C.Position_0)
           continue;
         switch (node._display) {
           case C.Display_0:
-            if (currentRow.children.length !== 0)
-              currentRow = new K.LTblockElementRow(_this._rowWidth, H.setRuntimeTypeInfo([], t2));
+            if (currentRow.children.length !== 0) {
+              currentRow.calculateWidthStage1$0();
+              t5 = _this._rowWidth;
+              currentRow = new K.LTblockElementRow(t5, t5, H.setRuntimeTypeInfo([], t3), H.setRuntimeTypeInfo([], t3));
+            }
             netRestWidth = _this._rowWidth - node._margin_left - node._margin_right;
             if (node._fillRowWidth)
               node.set$_calculatedWidth(Math.min(netRestWidth, node._maxWidth));
             currentRow.restWidth = netRestWidth - node._calculatedWidth;
             C.JSArray_methods.add$1(currentRow.children, node);
             C.JSArray_methods.add$1(t1, currentRow);
-            currentRow = new K.LTblockElementRow(_this._rowWidth, H.setRuntimeTypeInfo([], t2));
+            t5 = _this._rowWidth;
+            currentRow = new K.LTblockElementRow(t5, t5, H.setRuntimeTypeInfo([], t3), H.setRuntimeTypeInfo([], t3));
             C.JSArray_methods.add$1(t1, currentRow);
             break;
           case C.Display_1:
             rowRestWidth = currentRow.restWidth;
             if (node._fillRowWidth) {
-              childWidth = node._calculateWidthStage1$1(rowRestWidth);
-              if (childWidth > rowRestWidth) {
+              if (!currentRow.addFreeNode$1(node)) {
+                currentRow.calculateWidthStage1$0();
                 t5 = _this._rowWidth;
-                t6 = H.setRuntimeTypeInfo([], t2);
-                currentRow = new K.LTblockElementRow(t5, t6);
-                C.JSArray_methods.add$1(t6, node);
+                currentRow = new K.LTblockElementRow(t5, t5, H.setRuntimeTypeInfo([], t3), H.setRuntimeTypeInfo([], t3));
+                currentRow.addFreeNode$1(node);
                 C.JSArray_methods.add$1(t1, currentRow);
-                t6 = _this._rowWidth;
-                netRestWidth = t6 - node._margin_left - node._margin_right;
-                t5 = node._maxWidth;
-                if (netRestWidth > t5) {
-                  node._calculatedWidth = t5;
-                  currentRow.restWidth = netRestWidth - t5;
-                } else {
-                  node._calculatedWidth = netRestWidth;
-                  currentRow.restWidth = 0;
-                  currentRow = new K.LTblockElementRow(t6, H.setRuntimeTypeInfo([], t2));
-                  C.JSArray_methods.add$1(t1, currentRow);
-                }
-              } else {
-                C.JSArray_methods.add$1(currentRow.children, node);
-                currentRow.restWidth -= childWidth;
               }
             } else {
-              t5 = node._margin_left;
-              t6 = node._margin_right;
-              netRestWidth = rowRestWidth - t5 - t6;
-              t7 = node._calculatedWidth;
-              if (netRestWidth < t7) {
-                t8 = _this._rowWidth;
-                t9 = H.setRuntimeTypeInfo([], t2);
-                currentRow = new K.LTblockElementRow(t8 - t7 - t5 - t6, t9);
-                C.JSArray_methods.add$1(t9, node);
+              occupiedWidth = node._calculatedWidth + node._margin_left + node._margin_right;
+              if (rowRestWidth < occupiedWidth) {
+                rowRestWidth = _this._rowWidth - occupiedWidth;
+                currentRow.calculateWidthStage1$0();
+                t5 = H.setRuntimeTypeInfo([], t3);
+                currentRow = new K.LTblockElementRow(rowRestWidth, rowRestWidth, t5, H.setRuntimeTypeInfo([], t3));
+                C.JSArray_methods.add$1(t5, node);
                 C.JSArray_methods.add$1(t1, currentRow);
               } else {
-                currentRow.restWidth = netRestWidth - t7;
+                currentRow.restWidth = rowRestWidth - occupiedWidth;
+                currentRow.freeWidth -= occupiedWidth;
                 C.JSArray_methods.add$1(currentRow.children, node);
               }
             }
@@ -4248,19 +4493,8 @@
             return;
         }
       }
-    },
-    _calculateWidthStage1$1: function(widthToFill) {
-      var _this = this,
-        t1 = _this._calculatedWidth,
-        t2 = _this._margin_left,
-        t3 = _this._margin_right,
-        ret = t1 + t2 + t3;
-      if (widthToFill < ret)
-        return ret;
-      _this.set$_calculatedWidth(Math.min(widthToFill - t2 - t3, _this._maxWidth));
-      t1 = _this._calculatedWidth;
-      _this._rowWidth = t1 - _this._padding_left - _this._padding_right - _this._border_left - _this._border_right;
-      return t1 + _this._margin_left + _this._margin_right;
+      if (currentRow.freeNode.length !== 0)
+        currentRow.calculateWidthStage1$0();
     },
     _calculateHeightStage2$0: function() {
       var t1, t2, _i, row, _this = this;
@@ -4518,15 +4752,28 @@
     call$1: function(node) {
       return node.parent != null;
     },
-    $signature: 2
+    $signature: 3
   };
   K.LTelementNode__calculateLayoutFixedStage1_closure0.prototype = {
     call$1: function(node) {
       return node.parent != null;
     },
-    $signature: 2
+    $signature: 3
   };
   K.LTblockElementRow.prototype = {
+    addFreeNode$1: function(node) {
+      var _this = this,
+        margin = node._margin_right + node._margin_left,
+        occupiedWidth = node._calculatedWidth + margin,
+        t1 = _this.restWidth;
+      if (t1 < occupiedWidth)
+        return false;
+      _this.restWidth = t1 - occupiedWidth;
+      _this.freeWidth -= margin;
+      C.JSArray_methods.add$1(_this.children, node);
+      C.JSArray_methods.add$1(_this.freeNode, node);
+      return true;
+    },
     calcHeight$0: function() {
       var t1, t2, ret, _i, node;
       for (t1 = this.children, t2 = t1.length, ret = 0, _i = 0; _i < t2; ++_i) {
@@ -4538,6 +4785,49 @@
         ret = Math.max(node._calculatedHeight + node._margin_top + node._margin_bottom, ret);
       }
       return this.height = ret;
+    },
+    calculateWidthStage1$0: function() {
+      var finished, _i, node, _this = this,
+        t1 = _this.freeWidth,
+        t2 = _this.freeNode,
+        t3 = t2.length,
+        avgWidth = t1 / t3;
+      for (t1 = t3; true; t1 = t3) {
+        _i = 0;
+        while (true) {
+          if (!(_i < t2.length)) {
+            finished = true;
+            break;
+          }
+          node = t2[_i];
+          t3 = node._maxWidth;
+          if (t3 < avgWidth) {
+            node._calculatedWidth = t3;
+            _this.freeWidth -= t3;
+            C.JSArray_methods.remove$1(t2, node);
+            finished = false;
+            break;
+          }
+          t3 = node._minWidth;
+          if (t3 > avgWidth) {
+            node._calculatedWidth = t3;
+            _this.freeWidth -= t3;
+            C.JSArray_methods.remove$1(t2, node);
+            finished = false;
+            break;
+          }
+          node._calculatedWidth = C.JSDouble_methods.floor$0(avgWidth);
+          t2.length === t1 || (0, H.throwConcurrentModificationError)(t2);
+          ++_i;
+        }
+        if (finished)
+          break;
+        else {
+          t1 = _this.freeWidth;
+          t3 = t2.length;
+          avgWidth = t1 / t3;
+        }
+      }
     }
   };
   E.Display.prototype = {
@@ -4562,7 +4852,7 @@
   };
   T.Lucid.prototype = {
     reflowAt$1: function(atNode) {
-      var target, _box_0 = {};
+      var target, t1, _box_0 = {};
       _box_0.currentNode = atNode;
       switch (atNode.stageToUpdate) {
         case 0:
@@ -4590,6 +4880,9 @@
                 target = 2;
                 continue c$0;
               case 2:
+                t1 = _box_0.currentNode.parent;
+                if (t1 != null)
+                  t1.stage1Update$0();
                 K.LTelementNode_traverseUpTill(_box_0.currentNode.traverseDown$1(new T.Lucid_reflowAt_closure0()), new T.Lucid_reflowAt_closure1(), new T.Lucid_reflowAt_closure2(_box_0));
                 if (_box_0.currentNode.stage2Update$0())
                   _box_0.currentNode = _box_0.currentNode.traceUpTill$1(new T.Lucid_reflowAt_closure3());
@@ -4600,6 +4893,9 @@
                 target = 4;
                 continue c$0;
               case 4:
+                t1 = _box_0.currentNode.parent;
+                if (t1 != null)
+                  t1.stage3Update$0();
                 _box_0.currentNode.traverseDown$1(new T.Lucid_reflowAt_closure5());
                 break c$0;
             }
@@ -4617,84 +4913,84 @@
     call$1: function(node) {
       return node.stage0Update$0() && node._position === C.Position_0;
     },
-    $signature: 2
+    $signature: 3
   };
   T.Lucid_reflowAt_closure0.prototype = {
     call$1: function(node) {
       node.stage1Update$0();
     },
-    $signature: 1
+    $signature: 2
   };
   T.Lucid_reflowAt_closure1.prototype = {
     call$1: function(node) {
       return node.stage2Update$0();
     },
-    $signature: 1
+    $signature: 2
   };
   T.Lucid_reflowAt_closure2.prototype = {
     call$1: function(node) {
       return node !== this._box_0.currentNode;
     },
-    $signature: 2
+    $signature: 3
   };
   T.Lucid_reflowAt_closure3.prototype = {
     call$1: function(node) {
       return node.stage2Update$0() && node._position === C.Position_0;
     },
-    $signature: 2
+    $signature: 3
   };
   T.Lucid_reflowAt_closure4.prototype = {
     call$1: function(node) {
       return node.stage2Update$0() && node._position === C.Position_0;
     },
-    $signature: 2
+    $signature: 3
   };
   T.Lucid_reflowAt_closure5.prototype = {
     call$1: function(node) {
       node.stage3Update$0();
     },
-    $signature: 1
+    $signature: 2
   };
   T.Lucid_initializeLayout_closure.prototype = {
     call$1: function(node) {
     },
-    $signature: 1
+    $signature: 2
   };
   T.Lucid_initializeLayout_closure0.prototype = {
     call$1: function(node) {
       return node.stage0Update$0();
     },
-    $signature: 1
+    $signature: 2
   };
   T.Lucid_initializeLayout_closure1.prototype = {
     call$1: function(node) {
       return true;
     },
-    $signature: 2
+    $signature: 3
   };
   T.Lucid_initializeLayout_closure2.prototype = {
     call$1: function(node) {
       node.stage1Update$0();
     },
-    $signature: 1
+    $signature: 2
   };
   T.Lucid_initializeLayout_closure3.prototype = {
     call$1: function(node) {
       return node.stage2Update$0();
     },
-    $signature: 1
+    $signature: 2
   };
   T.Lucid_initializeLayout_closure4.prototype = {
     call$1: function(node) {
       return true;
     },
-    $signature: 2
+    $signature: 3
   };
   T.Lucid_initializeLayout_closure5.prototype = {
     call$1: function(node) {
       node.stage3Update$0();
     },
-    $signature: 1
+    $signature: 2
   };
   (function aliases() {
     var _ = J.JavaScriptObject.prototype;
@@ -4704,44 +5000,77 @@
     var _static_2 = hunkHelpers._static_2,
       _static_1 = hunkHelpers._static_1,
       _static_0 = hunkHelpers._static_0;
-    _static_2(N, "jsInternal__initializeRootNode$closure", "initializeRootNode", 11);
-    _static_1(N, "jsInternal__addChild$closure", "addChild", 12);
-    _static_1(N, "jsInternal__removeChild$closure", "removeChild", 3);
-    _static_2(N, "jsInternal__display$closure", "display", 0);
-    _static_2(N, "jsInternal__position$closure", "position", 0);
-    _static_2(N, "jsInternal__width$closure", "width", 0);
-    _static_2(N, "jsInternal__minWidth$closure", "minWidth", 0);
-    _static_2(N, "jsInternal__maxWidth$closure", "maxWidth", 0);
-    _static_2(N, "jsInternal__height$closure", "height", 0);
-    _static_2(N, "jsInternal__minHeight$closure", "minHeight", 0);
-    _static_2(N, "jsInternal__maxHeight$closure", "maxHeight", 0);
-    _static_2(N, "jsInternal__line_height$closure", "line_height", 0);
-    _static_2(N, "jsInternal__border_top$closure", "border_top", 0);
-    _static_2(N, "jsInternal__border_right$closure", "border_right", 0);
-    _static_2(N, "jsInternal__border_bottom$closure", "border_bottom", 0);
-    _static_2(N, "jsInternal__border_left$closure", "border_left", 0);
-    _static_2(N, "jsInternal__margin_top$closure", "margin_top", 0);
-    _static_2(N, "jsInternal__margin_right$closure", "margin_right", 0);
-    _static_2(N, "jsInternal__margin_bottom$closure", "margin_bottom", 0);
-    _static_2(N, "jsInternal__margin_left$closure", "margin_left", 0);
-    _static_2(N, "jsInternal__padding_top$closure", "padding_top", 0);
-    _static_2(N, "jsInternal__padding_right$closure", "padding_right", 0);
-    _static_2(N, "jsInternal__padding_bottom$closure", "padding_bottom", 0);
-    _static_2(N, "jsInternal__padding_left$closure", "padding_left", 0);
-    _static_2(N, "jsInternal__left$closure", "left", 0);
-    _static_2(N, "jsInternal__top$closure", "top", 0);
-    _static_2(N, "jsInternal__right$closure", "right", 0);
-    _static_2(N, "jsInternal__bottom$closure", "bottom", 0);
-    _static_2(N, "jsInternal__wrap$closure", "wrap", 4);
-    _static_2(N, "jsInternal__fit_content$closure", "fit_content", 4);
-    _static_2(N, "jsInternal__overflow$closure", "overflow", 0);
-    _static_2(N, "jsInternal__alignTracks$closure", "alignTracks", 0);
-    _static_2(N, "jsInternal__alignItems$closure", "alignItems", 0);
-    _static_2(N, "jsInternal__alignSelf$closure", "alignSelf", 0);
-    _static_0(N, "jsInternal__initializeLayout$closure", "initializeLayout", 13);
-    _static_1(N, "jsInternal__reflowAt$closure", "reflowAt", 3);
-    _static_1(N, "jsInternal__getCalculatedBoundingRect$closure", "getCalculatedBoundingRect", 14);
-    _static_1(N, "jsInternal__inspectRecursive$closure", "inspectRecursive", 3);
+    _static_2(N, "jsInternal__initializeRootNode$closure", "initializeRootNode", 14);
+    _static_1(N, "jsInternal__addChild$closure", "addChild", 1);
+    _static_1(N, "jsInternal__removeChild$closure", "removeChild", 5);
+    _static_2(N, "jsInternal__setDisplay$closure", "setDisplay", 0);
+    _static_1(N, "jsInternal__getDisplay$closure", "getDisplay", 1);
+    _static_2(N, "jsInternal__setPosition$closure", "setPosition", 0);
+    _static_1(N, "jsInternal__getPosition$closure", "getPosition", 1);
+    _static_2(N, "jsInternal__setWidth$closure", "setWidth", 0);
+    _static_1(N, "jsInternal__getWidth$closure", "getWidth", 4);
+    _static_2(N, "jsInternal__setMinWidth$closure", "setMinWidth", 0);
+    _static_1(N, "jsInternal__getMinWidth$closure", "getMinWidth", 1);
+    _static_2(N, "jsInternal__setMaxWidth$closure", "setMaxWidth", 0);
+    _static_1(N, "jsInternal__getMaxWidth$closure", "getMaxWidth", 1);
+    _static_2(N, "jsInternal__setHeight$closure", "setHeight", 0);
+    _static_1(N, "jsInternal__getHeight$closure", "getHeight", 4);
+    _static_2(N, "jsInternal__setMinHeight$closure", "setMinHeight", 0);
+    _static_1(N, "jsInternal__getMinHeight$closure", "getMinHeight", 1);
+    _static_2(N, "jsInternal__setMaxHeight$closure", "setMaxHeight", 0);
+    _static_1(N, "jsInternal__getMaxHeight$closure", "getMaxHeight", 1);
+    _static_2(N, "jsInternal__setLine_height$closure", "setLine_height", 0);
+    _static_1(N, "jsInternal__getLine_height$closure", "getLine_height", 1);
+    _static_2(N, "jsInternal__setBorder_top$closure", "setBorder_top", 0);
+    _static_1(N, "jsInternal__getBorder_top$closure", "getBorder_top", 1);
+    _static_2(N, "jsInternal__setBorder_right$closure", "setBorder_right", 0);
+    _static_1(N, "jsInternal__getBorder_right$closure", "getBorder_right", 1);
+    _static_2(N, "jsInternal__setBorder_bottom$closure", "setBorder_bottom", 0);
+    _static_1(N, "jsInternal__getBorder_bottom$closure", "getBorder_bottom", 1);
+    _static_2(N, "jsInternal__setBorder_left$closure", "setBorder_left", 0);
+    _static_1(N, "jsInternal__getBorder_left$closure", "getBorder_left", 1);
+    _static_2(N, "jsInternal__setMargin_top$closure", "setMargin_top", 0);
+    _static_1(N, "jsInternal__getMargin_top$closure", "getMargin_top", 1);
+    _static_2(N, "jsInternal__setMargin_right$closure", "setMargin_right", 0);
+    _static_1(N, "jsInternal__getMargin_right$closure", "getMargin_right", 1);
+    _static_2(N, "jsInternal__setMargin_bottom$closure", "setMargin_bottom", 0);
+    _static_1(N, "jsInternal__getMargin_bottom$closure", "getMargin_bottom", 1);
+    _static_2(N, "jsInternal__setMargin_left$closure", "setMargin_left", 0);
+    _static_1(N, "jsInternal__getMargin_left$closure", "getMargin_left", 1);
+    _static_2(N, "jsInternal__setPadding_top$closure", "setPadding_top", 0);
+    _static_1(N, "jsInternal__getPadding_top$closure", "getPadding_top", 1);
+    _static_2(N, "jsInternal__setPadding_right$closure", "setPadding_right", 0);
+    _static_1(N, "jsInternal__getPadding_right$closure", "getPadding_right", 1);
+    _static_2(N, "jsInternal__setPadding_bottom$closure", "setPadding_bottom", 0);
+    _static_1(N, "jsInternal__getPadding_bottom$closure", "getPadding_bottom", 1);
+    _static_2(N, "jsInternal__setPadding_left$closure", "setPadding_left", 0);
+    _static_1(N, "jsInternal__getPadding_left$closure", "getPadding_left", 1);
+    _static_2(N, "jsInternal__setLeft$closure", "setLeft", 0);
+    _static_1(N, "jsInternal__getLeft$closure", "getLeft", 4);
+    _static_2(N, "jsInternal__setTop$closure", "setTop", 0);
+    _static_1(N, "jsInternal__getTop$closure", "getTop", 4);
+    _static_2(N, "jsInternal__setRight$closure", "setRight", 0);
+    _static_1(N, "jsInternal__getRight$closure", "getRight", 4);
+    _static_2(N, "jsInternal__setBottom$closure", "setBottom", 0);
+    _static_1(N, "jsInternal__getBottom$closure", "getBottom", 4);
+    _static_2(N, "jsInternal__setWrap$closure", "setWrap", 6);
+    _static_1(N, "jsInternal__getWrap$closure", "getWrap", 7);
+    _static_2(N, "jsInternal__setFit_content$closure", "setFit_content", 6);
+    _static_1(N, "jsInternal__getFit_content$closure", "getFit_content", 7);
+    _static_2(N, "jsInternal__setOverflow$closure", "setOverflow", 0);
+    _static_1(N, "jsInternal__getOverflow$closure", "getOverflow", 1);
+    _static_2(N, "jsInternal__setAlignTracks$closure", "setAlignTracks", 0);
+    _static_1(N, "jsInternal__getAlignTracks$closure", "getAlignTracks", 1);
+    _static_2(N, "jsInternal__setAlignItems$closure", "setAlignItems", 0);
+    _static_1(N, "jsInternal__getAlignItems$closure", "getAlignItems", 1);
+    _static_2(N, "jsInternal__setAlignSelf$closure", "setAlignSelf", 0);
+    _static_1(N, "jsInternal__getAlignSelf$closure", "getAlignSelf", 1);
+    _static_0(N, "jsInternal__initializeLayout$closure", "initializeLayout", 15);
+    _static_1(N, "jsInternal__reflowAt$closure", "reflowAt", 5);
+    _static_1(N, "jsInternal__getCalculatedWidth$closure", "getCalculatedWidth", 1);
+    _static_1(N, "jsInternal__getCalculatedHeight$closure", "getCalculatedHeight", 1);
+    _static_1(N, "jsInternal__getCalculatedBoundingRect$closure", "getCalculatedBoundingRect", 16);
+    _static_1(N, "jsInternal__inspectRecursive$closure", "inspectRecursive", 5);
   })();
   (function inheritance() {
     var _mixin = hunkHelpers.mixin,
@@ -4773,7 +5102,7 @@
     mangledNames: {},
     getTypeFromName: getGlobalFromName,
     metadata: [],
-    types: ["~(int,int)", "~(LTelementNode?)", "bool(LTelementNode?)", "~(int)", "~(int,bool)", "~(String,@)", "@(@)", "@(@,String)", "@(String)", "~(Object?,Object?)", "~(Symbol0,@)", "int(int,int)", "int(int)", "~()", "Object(int)"],
+    types: ["~(int,int)", "int(int)", "~(LTelementNode?)", "bool(LTelementNode?)", "int?(int)", "~(int)", "~(int,bool)", "bool(int)", "~(String,@)", "@(@)", "@(@,String)", "@(String)", "~(Object?,Object?)", "~(Symbol0,@)", "int(int,int)", "~()", "Object(int)"],
     interceptorsByTag: null,
     leafTags: null,
     arrayRti: typeof Symbol == "function" && typeof Symbol() == "symbol" ? Symbol("$ti") : "$ti"
@@ -4803,6 +5132,7 @@
       Symbol: findType("Symbol0"),
       UnknownJavaScriptObject: findType("UnknownJavaScriptObject"),
       bool: findType("bool"),
+      bool_Function_int: findType("bool(int)"),
       bool_Function_nullable_LTelementNode: findType("bool(LTelementNode?)"),
       double: findType("double"),
       dynamic: findType("@"),
@@ -4814,6 +5144,7 @@
       nullable_Future_Null: findType("Future<Null>?"),
       nullable_LTelementNode: findType("LTelementNode?"),
       nullable_Object: findType("Object?"),
+      nullable_int_Function_int: findType("int?(int)"),
       num: findType("num"),
       void_Function: findType("~()"),
       void_Function_int: findType("~(int)"),
@@ -4833,10 +5164,10 @@
     C.JavaScriptFunction_methods = J.JavaScriptFunction.prototype;
     C.PlainJavaScriptObject_methods = J.PlainJavaScriptObject.prototype;
     C.UnknownJavaScriptObject_methods = J.UnknownJavaScriptObject.prototype;
-    C.Alignment_0 = new E.Alignment("Alignment.start");
-    C.Alignment_1 = new E.Alignment("Alignment.end");
-    C.Alignment_2 = new E.Alignment("Alignment.center");
-    C.Alignment_3 = new E.Alignment("Alignment.space_between");
+    C.Alignment_0 = new E.Alignment(0, "Alignment.start");
+    C.Alignment_1 = new E.Alignment(1, "Alignment.end");
+    C.Alignment_2 = new E.Alignment(2, "Alignment.center");
+    C.Alignment_3 = new E.Alignment(3, "Alignment.space_between");
     C.C_JS_CONST = function getTagFallback(o) {
   var s = Object.prototype.toString.call(o);
   return s.substring(8, s.length - 1);
@@ -4958,20 +5289,20 @@
     C.C_JS_CONST3 = function(hooks) { return hooks; }
 ;
     C.C__Required = new H._Required();
-    C.Display_0 = new E.Display("Display.block");
-    C.Display_1 = new E.Display("Display.inline_block");
-    C.Display_2 = new E.Display("Display.inline");
-    C.List_4AN = H.setRuntimeTypeInfo(makeConstList([C.Alignment_0, C.Alignment_1, C.Alignment_2, C.Alignment_3]), H.findType("JSArray<Alignment>"));
-    C.List_IMQ = H.setRuntimeTypeInfo(makeConstList([C.Display_0, C.Display_1, C.Display_2]), H.findType("JSArray<Display>"));
-    C.Overflow_0 = new E.Overflow("Overflow.hidden");
-    C.Overflow_1 = new E.Overflow("Overflow.visible");
-    C.Overflow_2 = new E.Overflow("Overflow.scroll");
-    C.List_O92 = H.setRuntimeTypeInfo(makeConstList([C.Overflow_0, C.Overflow_1, C.Overflow_2]), H.findType("JSArray<Overflow>"));
+    C.Display_0 = new E.Display(0, "Display.block");
+    C.Display_1 = new E.Display(1, "Display.inline_block");
+    C.Display_2 = new E.Display(2, "Display.inline");
+    C.List_8eb = H.setRuntimeTypeInfo(makeConstList([C.Display_0, C.Display_1, C.Display_2]), H.findType("JSArray<Display>"));
+    C.List_90K = H.setRuntimeTypeInfo(makeConstList([C.Alignment_0, C.Alignment_1, C.Alignment_2, C.Alignment_3]), H.findType("JSArray<Alignment>"));
     C.List_empty = H.setRuntimeTypeInfo(makeConstList([]), type$.JSArray_dynamic);
-    C.Position_0 = new E.Position("Position.relative");
-    C.Position_1 = new E.Position("Position.absolute");
-    C.Position_2 = new E.Position("Position.fixed");
-    C.List_ksT = H.setRuntimeTypeInfo(makeConstList([C.Position_0, C.Position_1, C.Position_2]), H.findType("JSArray<Position>"));
+    C.Position_0 = new E.Position(0, "Position.relative");
+    C.Position_1 = new E.Position(1, "Position.absolute");
+    C.Position_2 = new E.Position(2, "Position.fixed");
+    C.List_kyy = H.setRuntimeTypeInfo(makeConstList([C.Position_0, C.Position_1, C.Position_2]), H.findType("JSArray<Position>"));
+    C.Overflow_0 = new E.Overflow(0, "Overflow.hidden");
+    C.Overflow_1 = new E.Overflow(1, "Overflow.visible");
+    C.Overflow_2 = new E.Overflow(2, "Overflow.scroll");
+    C.List_oGx = H.setRuntimeTypeInfo(makeConstList([C.Overflow_0, C.Overflow_1, C.Overflow_2]), H.findType("JSArray<Overflow>"));
     C.List_empty0 = H.setRuntimeTypeInfo(makeConstList([]), H.findType("JSArray<Symbol0>"));
     C.Map_empty = new H.ConstantStringMap(0, {}, C.List_empty0, H.findType("ConstantStringMap<Symbol0,@>"));
     C.Symbol_call = new H.Symbol("call");

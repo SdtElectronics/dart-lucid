@@ -22,139 +22,264 @@ int addChild(int parent){
 	return id;
 }
 
-void removeChild(int id){
-	final child = LTelementNode(Display.inline_block, id);
+int? removeChild(int id){
+	final child = elements[id]!;
 	final parent = child.parent!;
 	parent.removeChild(child);
 	elements[id] = null;
+	return parent.id;
 }
 
-void display(int id, int disp){
+void setDisplay(int id, int disp){
 	elements[id]!.display = Display.values[disp];
 }
 
-void position(int id, int ps){
+int getDisplay(int id){
+	return elements[id]!.display.index;
+}
+
+void setPosition(int id, int ps){
 	elements[id]!.position = Position.values[ps];
 }
 
+int getPosition(int id){
+	return elements[id]!.position.index;
+}
 
-void width(int id, int w){
+
+void setWidth(int id, int? w){
 	elements[id]!.width = w;	
 }
 
-void minWidth(int id, int mw){
+int? getWidth(int id){
+	return elements[id]!.width;
+}
+
+void setMinWidth(int id, int mw){
 	elements[id]!.minWidth = mw;
 }
 
-void maxWidth(int id, int mw){
+int getMinWidth(int id){
+	return elements[id]!.minWidth;
+}
+
+void setMaxWidth(int id, int mw){
 	elements[id]!.maxWidth = mw;	
 }
 
-void height(int id, int h){
+int getMaxWidth(int id){
+	return elements[id]!.maxWidth;
+}
+
+void setHeight(int id, int? h){
 	elements[id]!.height = h;
 }
 
-void minHeight(int id, int mh){
+int? getHeight(int id){
+	return elements[id]!.height;
+}
+
+void setMinHeight(int id, int mh){
 	elements[id]!.minHeight = mh;
 }
 
-void maxHeight(int id, int mh){
+int getMinHeight(int id){
+	return elements[id]!.minHeight;
+}
+
+void setMaxHeight(int id, int mh){
 	elements[id]!.maxHeight = mh;
 }
 
-void line_height(int id, int lh){
+int getMaxHeight(int id){
+	return elements[id]!.maxHeight;
+}
+
+void setLine_height(int id, int lh){
 	elements[id]!.line_height = lh;
 }
 
-void border_top(int id, int bt){
+int getLine_height(int id){
+	return elements[id]!.line_height;
+}
+
+void setBorder_top(int id, int bt){
 	elements[id]!.border_top = bt;
 }
 
-void border_right(int id, int br){
+int getBorder_top(int id){
+	return elements[id]!.border_top;
+}
+
+void setBorder_right(int id, int br){
 	elements[id]!.border_right = br;
 }
 
-void border_bottom(int id, int bb){
+int getBorder_right(int id){
+	return elements[id]!.border_right;
+}
+
+void setBorder_bottom(int id, int bb){
 	elements[id]!.border_bottom = bb;
 }
 
-void border_left(int id, int bl){
+int getBorder_bottom(int id){
+	return elements[id]!.border_bottom;
+}
+
+void setBorder_left(int id, int bl){
 	elements[id]!.border_left = bl;
 }
 
+int getBorder_left(int id){
+	return elements[id]!.border_left;
+}
 
-void margin_top(int id, int mt){
+
+void setMargin_top(int id, int mt){
 	elements[id]!.margin_top = mt;
 }
 
-void margin_right(int id, int mr){
+int getMargin_top(int id){
+	return elements[id]!.margin_top;
+}
+
+void setMargin_right(int id, int mr){
 	elements[id]!.margin_right = mr;
 }
 
-void margin_bottom(int id, int mb){
+int getMargin_right(int id){
+	return elements[id]!.margin_right;
+}
+
+void setMargin_bottom(int id, int mb){
 	elements[id]!.margin_bottom = mb;
 }
 
-void margin_left(int id, int ml){
+int getMargin_bottom(int id){
+	return elements[id]!.margin_bottom;
+}
+
+void setMargin_left(int id, int ml){
 	elements[id]!.margin_left = ml;
 }
 
+int getMargin_left(int id){
+	return elements[id]!.margin_left;
+}
 
-void padding_top(int id, int pt){
+
+void setPadding_top(int id, int pt){
 	elements[id]!.padding_top = pt;
 }
 
-void padding_right(int id, int pr){
+int getPadding_top(int id){
+	return elements[id]!.padding_top;
+}
+
+void setPadding_right(int id, int pr){
 	elements[id]!.padding_right = pr;
 }
 
-void padding_bottom(int id, int pb){
+int getPadding_right(int id){
+	return elements[id]!.padding_right;
+}
+
+void setPadding_bottom(int id, int pb){
 	elements[id]!.padding_bottom = pb;
 }
 
-void padding_left(int id, int pl){
+int getPadding_bottom(int id){
+	return elements[id]!.padding_bottom;
+}
+
+void setPadding_left(int id, int pl){
 	elements[id]!.padding_left = pl;
 }
 
-void left(int id, int l){
+int getPadding_left(int id){
+	return elements[id]!.padding_left;
+}
+
+void setLeft(int id, int? l){
 	elements[id]!.left = l;
 }
 
-void top(int id, int t){
+int? getLeft(int id){
+	return elements[id]!.left;
+}
+
+void setTop(int id, int? t){
 	elements[id]!.top = t;
 }
 
-void right(int id, int r){
+int? getTop(int id){
+	return elements[id]!.top;
+}
+
+void setRight(int id, int? r){
 	elements[id]!.right = r;
 }
 
-void bottom(int id, int b){
+int? getRight(int id){
+	return elements[id]!.right;
+}
+
+void setBottom(int id, int? b){
 	elements[id]!.bottom = b;
 }
 
+int? getBottom(int id){
+	return elements[id]!.bottom;
+}
 
-void wrap(int id, bool wp){
+
+void setWrap(int id, bool wp){
 	elements[id]!.wrap = wp;
 }
 
-void fit_content(int id, bool fc){
+bool getWrap(int id){
+	return elements[id]!.wrap;
+}
+
+void setFit_content(int id, bool fc){
 	elements[id]!.fit_content = fc;
 }
 
-void overflow(int id, int ov){
+bool getFit_content(int id){
+	return elements[id]!.fit_content;
+}
+
+void setOverflow(int id, int ov){
 	elements[id]!.overflow = Overflow.values[ov];
 }
 
-void alignTracks(int id, int at){
+int getOverflow(int id){
+	return elements[id]!.overflow.index;
+}
+
+void setAlignTracks(int id, int at){
 	elements[id]!.alignTracks = Alignment.values[at];
 }
 
-void alignItems(int id, int ai){
+int getAlignTracks(int id){
+	return elements[id]!.alignTracks.index;
+}
+
+void setAlignItems(int id, int ai){
 	elements[id]!.alignItems = Alignment.values[ai];
 }
 
-void alignSelf(int id, int asl){
+int getAlignItems(int id){
+	return elements[id]!.alignItems.index;
+}
+
+void setAlignSelf(int id, int asl){
 	elements[id]!.alignSelf = Alignment.values[asl];
+}
+
+int getAlignSelf(int id){
+	return elements[id]!.alignSelf.index;
 }
 
 void initializeLayout(){
@@ -163,6 +288,14 @@ void initializeLayout(){
 
 void reflowAt(int id){
 	lucid.reflowAt(elements[id]!);
+}
+
+int getCalculatedWidth(int id){
+	return elements[id]!.calculatedWidth;
+}
+
+int getCalculatedHeight(int id){
+	return elements[id]!.calculatedHeight;
 }
 
 Object getCalculatedBoundingRect(int id){
